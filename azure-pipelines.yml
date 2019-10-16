@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Vijay'
+  vmImage: 'ubuntu-14.04.4'
 
 steps:
 - task: Maven@3
