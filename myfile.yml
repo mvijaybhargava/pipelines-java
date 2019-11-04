@@ -8,14 +8,29 @@ pr:
 
 pool:
   vmImage: 'ubuntu-latest'
-
 steps:
-- task: Maven@3
+
+- task: Npm@1
+
+  displayName: 'npm install'
+
   inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: false
-    goals: 'package'
+
+    verbose: false
+
+
+
+- task: Npm@1
+
+  displayName: 'npm Build'
+
+  inputs:
+
+    command: custom
+
+    verbose: false
+
+    customCommand: build
+
+
+
